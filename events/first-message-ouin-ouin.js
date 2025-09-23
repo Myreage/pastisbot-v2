@@ -20,6 +20,10 @@ let lastMessageDate = new Date();
 module.exports = {
   name: Events.MessageCreate,
   execute(message) {
+    if (message.channelId !== "1278640453851418684") {
+      return;
+    }
+
     const createdAt = new Date(message.createdAt);
 
     if (isAtLeastOneDayAfter(lastMessageDate, createdAt)) {
