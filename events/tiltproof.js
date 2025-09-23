@@ -1,12 +1,12 @@
-const { AttachmentBuilder } = require("discord.js");
-const { Events } = require("discord.js");
+const { AttachmentBuilder, Events } = require("discord.js");
+const path = require("path");
 
 module.exports = {
   name: Events.MessageCreate,
   execute(message) {
     if (message.content.toLowerCase().includes("tiltproof")) {
       const file = new AttachmentBuilder(
-        "/home/myreage/PastisBot/img/tiltproof.png"
+        path.join(__dirname, "../img/tiltproof.png")
       );
       message.reply({
         files: [file],

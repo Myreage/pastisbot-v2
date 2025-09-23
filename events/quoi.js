@@ -6,6 +6,10 @@ const gifList = [
   "https://tenor.com/eZLryow6dCW.gif",
 ];
 
+const endsWithQuoi = (str) => {
+  return /quoi[\s\p{P}]*$/u.test(str.toLowerCase());
+};
+
 const getRandomInt = (min, max) => {
   const ceiledMin = Math.ceil(min);
   const flooredMax = Math.floor(max);
@@ -15,7 +19,7 @@ const getRandomInt = (min, max) => {
 module.exports = {
   name: Events.MessageCreate,
   execute(message) {
-    if (message.content.toLowerCase().includes("quoi")) {
+    if (endsWithQuoi(message.content)) {
       message.reply(gifList[getRandomInt(0, gifList.length)]);
     }
   },
