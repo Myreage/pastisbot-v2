@@ -1,4 +1,5 @@
 const { Events } = require("discord.js");
+const { getRandomInt } = require("../utils/getRandomInt");
 
 const gifList = [
   "https://tenor.com/nFQtOYNaams.gif",
@@ -8,12 +9,6 @@ const gifList = [
 
 const endsWithQuoi = (str) => {
   return /quoi[\s\p{P}]*$/u.test(str.toLowerCase());
-};
-
-const getRandomInt = (min, max) => {
-  const ceiledMin = Math.ceil(min);
-  const flooredMax = Math.floor(max);
-  return Math.floor(Math.random() * (flooredMax - ceiledMin)) + ceiledMin;
 };
 
 module.exports = {
