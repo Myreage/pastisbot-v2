@@ -4,12 +4,12 @@ const isAtLeastOneDayAfter = (firstDate, secondDate) => {
   const d1 = new Date(
     firstDate.getFullYear(),
     firstDate.getMonth(),
-    firstDate.getDate()
+    firstDate.getDate(),
   );
   const d2 = new Date(
     secondDate.getFullYear(),
     secondDate.getMonth(),
-    secondDate.getDate()
+    secondDate.getDate(),
   );
 
   return d2.getTime() > d1.getTime();
