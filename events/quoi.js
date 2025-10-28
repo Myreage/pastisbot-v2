@@ -14,7 +14,8 @@ const endsWithQuoi = (str) => {
 module.exports = {
   name: Events.MessageCreate,
   execute(message) {
-    if (endsWithQuoi(message.content)) {
+    const shouldRespond = getRandomInt(0, 5) === 1;
+    if (endsWithQuoi(message.content) && shouldRespond) {
       message.reply(gifList[getRandomInt(0, gifList.length)]);
     }
   },

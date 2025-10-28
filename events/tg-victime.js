@@ -24,7 +24,7 @@ module.exports = {
   name: Events.MessageCreate,
   execute(message) {
     if (message.author.id === "249303683609657355") {
-      const shouldReply = getRandomInt(0, 10) === 1;
+      const shouldReply = getRandomInt(0, 20) === 1;
 
       if (!shouldReply) {
         return;
