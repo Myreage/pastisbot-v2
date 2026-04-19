@@ -1,0 +1,7 @@
+services:
+  pastisbot:
+    build: .
+    container_name: pastisbot
+    restart: unless-stopped
+    env_file:
+      - .env
